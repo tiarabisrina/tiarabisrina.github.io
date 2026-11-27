@@ -262,3 +262,6 @@
 
 /* EIGER hero on mobile: keep both the trophy and the reseller receiving it in frame */
 @media (max-width: 767px) { .hero--wide .hero__visual img.hero-eiger { object-position: 65% center; } }
+
+/* decisions must swipe sideways on mobile (base .dec stacks in a column) */
+@media (max-width: 767px) { .dec.m-scroll { flex-direction: row; gap: 16px; } .dec.m-scroll .dec__row { --card-w: 260px; } }
