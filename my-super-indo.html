@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rethinking the My Super Indo app: a personal UI revamp · Tiara Bisrina</title>
+  <meta name="description" content="A personal UI revamp of a grocery app, built on a 2024 usability test I led: store and pickup context, promos that explain themselves, easier product discovery and readable text. By Tiara Bisrina.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="case.css">
+</head>
+<body id="top">
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="index.html">TIARA BISRINA</a>
+      <nav class="nav__links" aria-label="Main">
+        <a class="is-active" href="index.html#work" aria-current="page">Work</a>
+        <a href="about.html">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <details class="jump">
+    <summary>ON THIS PAGE <span class="jump__current">01 / Context</span></summary>
+    <ol>
+      <li><a href="#context">01 / Context</a></li>
+      <li><a href="#approach">02 / Approach</a></li>
+      <li><a href="#research">03 / Research</a></li>
+      <li><a href="#synthesis">04 / Synthesis</a></li>
+      <li><a href="#findings">05 / Key findings</a></li>
+      <li><a href="#decisions">06 / Decisions</a></li>
+      <li><a href="#solution">07 / Design solution</a></li>
+      <li><a href="#system">08 / Design system</a></li>
+      <li><a href="#ai">09 / AI workflow</a></li>
+      <li><a href="#outcome">10 / Outcome</a></li>
+      <li><a href="#takeaway">11 / Takeaway</a></li>
+    </ol>
+  </details>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero hero--wide">
+      <p class="hero__crumb">CASE STUDY 03 &nbsp;/&nbsp; PRODUCT DESIGN &nbsp;/&nbsp; GROCERY E-COMMERCE</p>
+      <figure class="card hero__visual">
+        <img class="hero-msi" src="images/msi/hero.jpg" width="1563" height="468" alt="My Super Indo logo with two phones showing the revamped home and search screens">
+        <figcaption class="cap"><span>Revamp mockups by Tiara</span><b class="chip-grey">PERSONAL EXPLORATION 2026</b></figcaption>
+      </figure>
+      <div class="hero__grid">
+        <div class="hero__text">
+          <h1>Rethinking the My Super Indo app: a personal UI revamp</h1>
+          <p class="hero__sub">A personal UI exploration of a grocery app, built on a 2024 usability test I led. It looks at a clearer store and pickup context, promos that explain themselves, easier product discovery, and text that mums can read with ease.</p>
+        </div>
+        <dl class="facts">
+          <div class="facts__row"><dt>PROJECT</dt><dd>Personal exploration, not an official Super Indo or ASA deliverable</dd></div>
+          <div class="facts__row"><dt>TIMELINE</dt><dd>2024 test · 2026 exploration</dd></div>
+          <div class="facts__row facts__row--role"><dt>MY ROLE &amp; METHODS</dt><dd class="facts__role">2024: led the usability test of the app at ASA, with Super Indo as the client.<br>2026: personal UI exploration, done alongside ASA’s 2026 revamp project for Super Indo, where I work as a junior UI/UX designer with a senior designer.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <div class="cs">
+      <aside class="toc" aria-label="On this page">
+        <p class="toc__label">ON THIS PAGE</p>
+        <ol>
+          <li><a href="#context">01 / Context</a></li>
+          <li><a href="#approach">02 / Approach</a></li>
+          <li><a href="#research">03 / Research</a></li>
+          <li><a href="#synthesis">04 / Synthesis</a></li>
+          <li><a href="#findings">05 / Key findings</a></li>
+          <li><a href="#decisions">06 / Decisions</a></li>
+          <li><a href="#solution">07 / Design solution</a></li>
+          <li><a href="#system">08 / Design system</a></li>
+          <li><a href="#ai">09 / AI workflow</a></li>
+          <li><a href="#outcome">10 / Outcome</a></li>
+          <li><a href="#takeaway">11 / Takeaway</a></li>
+        </ol>
+      </aside>
+
+      <div class="cs__main">
+
+        <!-- 01 CONTEXT -->
+        <section class="sec" id="context">
+          <div class="sec__body">
+            <div><p class="eyebrow">01 / Context</p><h2>Who uses the app, and what this revamp explores</h2></div>
+            <p class="lead">My Super Indo is the shopping app of a supermarket chain. Most of its loyal users are member mums who usually shop in the store and are starting to order through the app. This revamp explores how the app can make ordering online as clear as shopping in their usual store. For the business, a clearer app supports more member orders online, larger baskets and repeat orders.</p>
+            <p class="mini-label">HOW MIGHT WE</p>
+            <div class="grid grid--4 m-scroll">
+              <div class="card card--pad"><span class="rq">HMW 1</span><p class="rq__text">Keep the active store, and pickup vs delivery, clear at the moments that matter?</p></div>
+              <div class="card card--pad"><span class="rq">HMW 2</span><p class="rq__text">Make every promo say where it applies, and let mums buy it in one step?</p></div>
+              <div class="card card--pad"><span class="rq">HMW 3</span><p class="rq__text">Turn everyday words and dead ends in search into a next step?</p></div>
+              <div class="card card--pad"><span class="rq">HMW 4</span><p class="rq__text">Make key info, like pickup time and prices, readable at a glance for mums who prefer larger text?</p></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 02 APPROACH -->
+        <section class="sec" id="approach">
+          <div class="sec__body">
+            <div><p class="eyebrow">02 / Approach</p><h2>My approach: from 2024 usability research to a personal revamp</h2></div>
+            <div class="photos m-scroll">
+              <figure class="card photo"><img loading="lazy" src="images/msi/approach-1.jpg" width="584" height="488" alt="Three screens of the current My Super Indo app"><figcaption class="cap"><span>Audit of the current app</span><b class="chip-grey">CURRENT APP</b></figcaption></figure>
+              <figure class="card photo"><img loading="lazy" src="images/msi/approach-2.jpg" width="584" height="488" alt="Current checkout screen next to the revamped checkout"><figcaption class="cap"><span>Happy flows, before vs after</span><b class="chip-grey">REVAMP</b></figcaption></figure>
+              <figure class="card photo"><img loading="lazy" src="images/msi/approach-3.jpg" width="584" height="488" alt="Overview of the design system components"><figcaption class="cap"><span>A lean design system</span><b class="chip-grey">REVAMP</b></figcaption></figure>
+            </div>
+            <p class="lead">In 2024 I led usability research on the app at ASA, with Super Indo as the client. In 2026 I went back to those anonymised findings, checked them against a step-by-step audit of the current app, and grouped what both agreed on into three opportunity areas, plus readability across the whole app.</p>
+            <p class="lead">Each area became one happy flow, compared side by side with the current app. The design system only contains the components these flows need. This exploration is personal and separate from the official 2026 revamp.</p>
+            <p class="mini-label">PROCESS</p>
+            <div class="grid grid--4 m-scroll">
+              <div class="card card--pad step"><span class="step__n">01</span><h3>Research</h3><p>2024 usability research with member mums at ASA: focus groups and in-depth interviews.</p><span class="chip-accent">I led</span></div>
+              <div class="card card--pad step"><span class="step__n">02</span><h3>Curate</h3><p>Findings anonymised, checked against an audit of the current app, grouped into 3 areas.</p><span class="chip-accent">I curated</span></div>
+              <div class="card card--pad step"><span class="step__n">03</span><h3>Design</h3><p>3 happy flows, each compared side by side with the current app.</p><span class="chip-accent">I designed</span></div>
+              <div class="card card--pad step"><span class="step__n">04</span><h3>Systemise</h3><p>Foundations, 40 components and 27 icons, each decision documented.</p><span class="chip-accent">I built</span></div>
+            </div>
+            <p class="mini-label">WHO IT IS FOR</p>
+            <div class="grid grid--3 m-scroll">
+              <div class="card card--pad card--white group"><h3>Member mums</h3><p>Usually shop in-store and are starting to order through the app<br>→ Flow 1 · Store &amp; fulfilment</p></div>
+              <div class="card card--pad card--white group"><h3>Promo hunters</h3><p>Open the app for promos and check that discounts are really applied<br>→ Flow 2 · Promos</p></div>
+              <div class="card card--pad card--white group"><h3>List shoppers</h3><p>Arrive with a shopping list in mind and search with everyday words<br>→ Flow 3 · Product discovery</p></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 03 RESEARCH -->
+        <section class="sec" id="research">
+          <div class="sec__body">
+            <div><p class="eyebrow">03 / Research</p><h2>How the 2024 research was run and prioritised</h2></div>
+            <p class="lead">Focus groups (FGD) and in-depth interviews with member mums, using the live app. I moderated part of the sessions, and a research partner helped with synthesis. We summarised session notes into valid pain points, wrote the report for the client, and ranked what to fix first by how much each problem gets in the way of a transaction.</p>
+            <p class="mini-label">HOW EACH PROBLEM WAS SCORED</p>
+            <div class="grid grid--4 m-scroll">
+              <div class="card card--pad"><span class="rq">01 · MAP</span><p class="rq__text">Each problem placed on the journey step where it happens, so every journey shows how many problems it carries.</p></div>
+              <div class="card card--pad"><span class="rq">02 · CATEGORISE</span><p class="rq__text">UI/UX · People · Data systems · Copywriting · SOP. This separates design fixes from fixes the business owns.</p></div>
+              <div class="card card--pad"><span class="rq">03 · RATE SEVERITY</span><p class="rq__text">Low · Middle · Severe, by how much the problem blocks the transaction from finishing.</p></div>
+              <div class="card card--pad"><span class="rq">04 · PRIORITISE</span><p class="rq__text">Journeys with the most severe problems came first in the client report, and later shaped the areas in this exploration.</p></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 04 SYNTHESIS -->
+        <section class="sec" id="synthesis">
+          <div class="sec__body">
+            <div><p class="eyebrow">04 / Synthesis</p><h2>Three opportunity areas, plus readability, mapped on one shopping journey</h2></div>
+            <p class="lead">Every finding was placed on the same journey: browsing, choosing and adding to cart, then checkout. Small text came up across the whole journey, so it has its own row.</p>
+            <div class="matrix m-scroll" role="table" aria-label="Problems by opportunity area and journey step">
+              <div class="matrix__head" role="row" aria-hidden="true"><span></span><span class="phase">BROWSE</span><span class="phase">CHOOSE &amp; ADD</span><span class="phase">CHECKOUT</span></div>
+              <div class="matrix__row" role="row">
+                <div class="lane" role="rowheader"><b>Store &amp; fulfilment</b><small>PROBLEM 1</small></div>
+                <div class="theme" role="cell"><i class="theme__phase">BROWSE</i>Store is set once on Home, then pickup or delivery stays unclear</div>
+                <div class="theme" role="cell"><i class="theme__phase">CHOOSE &amp; ADD</i>No sign yet whether the order will be picked up or delivered</div>
+                <div class="theme" role="cell"><i class="theme__phase">CHECKOUT</i>Method only appears here, and pickup sits among couriers</div>
+              </div>
+              <div class="matrix__row" role="row">
+                <div class="lane" role="rowheader"><b>Promos</b><small>PROBLEM 2</small></div>
+                <div class="theme" role="cell"><i class="theme__phase">BROWSE</i>Not clear if a promo works online or only in-store</div>
+                <div class="theme" role="cell"><i class="theme__phase">CHOOSE &amp; ADD</i>Promo items can’t be added to cart; member promos only apply in-store via member scan</div>
+                <div class="theme" role="cell"><i class="theme__phase">CHECKOUT</i>Savings and discounts are never shown</div>
+              </div>
+              <div class="matrix__row" role="row">
+                <div class="lane" role="rowheader"><b>Product discovery</b><small>PROBLEM 3</small></div>
+                <div class="theme" role="cell"><i class="theme__phase">BROWSE</i>Categories hidden behind a small button</div>
+                <div class="theme" role="cell"><i class="theme__phase">CHOOSE &amp; ADD</i>Everyday words don’t match results; empty results are a dead end</div>
+                <div class="theme" role="cell"><i class="theme__phase">CHECKOUT</i>Out of stock is found late, near payment, with no alternative</div>
+              </div>
+              <div class="matrix__row" role="row">
+                <div class="lane" role="rowheader"><b>Readability</b><small>ACROSS THE APP</small></div>
+                <div class="theme" role="cell"><i class="theme__phase">BROWSE</i>Small, tight text in lists and notifications is skipped</div>
+                <div class="theme" role="cell"><i class="theme__phase">CHOOSE &amp; ADD</i>Small add buttons and product details are easy to miss</div>
+                <div class="theme" role="cell"><i class="theme__phase">CHECKOUT</i>Pickup time and pickup info too small to notice</div>
+              </div>
+            </div>
+            <p class="note-italic">Themes are summarised and anonymised.</p>
+          </div>
+        </section>
+
+        <!-- 05 KEY FINDINGS -->
+        <section class="sec" id="findings">
+          <div class="sec__body">
+            <div><p class="eyebrow">05 / Key findings</p><h2>4 key findings: three opportunity areas, plus readability</h2></div>
+            <div class="findings m-scroll">
+              <article class="finding">
+                <figure class="card finding__img"><img loading="lazy" src="images/msi/finding-1.jpg" width="459" height="375" alt="Current app checkout, with pickup listed among couriers"><figcaption class="cap"><span>Current app</span><b class="chip-grey">AS-IS</b></figcaption></figure>
+                <div class="finding__text">
+                  <h3><span class="finding__n">01</span><span>Pickup or delivery only becomes clear at checkout</span></h3>
+                  <p>Mums can’t choose up front whether to pick up or get it delivered. At checkout, pickup sits next to third-party couriers, so many expect the supermarket itself to deliver. “I’d like it to be sent by the supermarket.” (participant, translated)</p>
+                  <p class="implication"><b>Design implication:</b> show the store on Home, Cart and Checkout, and separate pickup from courier delivery.</p>
+                </div>
+              </article>
+              <article class="finding">
+                <figure class="card finding__img"><img loading="lazy" src="images/msi/finding-2.jpg" width="459" height="453" alt="Current app member promo page"><figcaption class="cap"><span>Current app</span><b class="chip-grey">AS-IS</b></figcaption></figure>
+                <div class="finding__text">
+                  <h3><span class="finding__n">02</span><span>Promos bring mums in, but their rules are learned by trial and error</span></h3>
+                  <p>It’s unclear if a promo works online or only in-store, member promos can’t be added to cart, and savings are never shown. “How do I know if it’s online or offline? Just try it.” (participant, translated)</p>
+                  <p class="implication"><b>Design implication:</b> label where each promo applies, let online promos go to the cart, and show savings from the cart.</p>
+                </div>
+              </article>
+              <article class="finding">
+                <figure class="card finding__img"><img loading="lazy" src="images/msi/finding-3.jpg" width="459" height="453" alt="Current app search with no results"><figcaption class="cap"><span>Current app</span><b class="chip-grey">AS-IS</b></figcaption></figure>
+                <div class="finding__text">
+                  <h3><span class="finding__n">03</span><span>Mums search with everyday words, and a dead end can end the trip</span></h3>
+                  <p>General keywords don’t always find the product, and empty results or out-of-stock items offer no next step. “Typed ‘fresh chicken’, nothing found… only ‘cut chicken’ worked.” (participant, translated)</p>
+                  <p class="implication"><b>Design implication:</b> match everyday words, and turn empty results and out-of-stock items into suggestions.</p>
+                </div>
+              </article>
+              <article class="finding">
+                <figure class="card finding__img"><img loading="lazy" src="images/msi/finding-4.jpg" width="459" height="507" alt="Current app home with categories behind a small button"><figcaption class="cap"><span>Current app</span><b class="chip-grey">AS-IS</b></figcaption></figure>
+                <div class="finding__text">
+                  <h3><span class="finding__n">04</span><span>Small text and hidden categories make the app hard to scan</span></h3>
+                  <p>Some participants found key text too small or cramped, like pickup times and notifications, while large text helped them notice offers. Categories sit behind a small button, so browsing is hard to start. “The pickup time isn’t clear… the text isn’t big enough.” (participant, translated)</p>
+                  <p class="implication"><b>Design implication:</b> body text at 16px, key info in semibold, and categories as large tiles on Home.</p>
+                </div>
+              </article>
+            </div>
+            <p class="note-italic">Current app screens, shown for comparison only.</p>
+          </div>
+        </section>
+
+        <!-- 06 DECISIONS -->
+        <section class="sec" id="decisions">
+          <div class="sec__body">
+            <div><p class="eyebrow">06 / Decisions</p><h2>From findings to design decisions</h2></div>
+            <p class="lead">Each decision is based on a finding. Where I had to choose, the trade-off and the option I rejected are listed.</p>
+            <div class="dec__head" aria-hidden="true"><span>INSIGHT</span><span>DECISION</span><span>TRADE-OFF</span><span>PRIORITY</span></div>
+            <div class="dec m-scroll">
+              <div class="dec__row"><i class="dec__num">DECISION 1</i><p class="dec__insight">Mums need to know the active store</p><p class="dec__cell"><i class="mlabel">DECISION</i>Store chip in the header of Home, Cart and Checkout; the whole row can be tapped.</p><p class="dec__cell dec__cell--soft"><i class="mlabel">TRADE-OFF</i>Not on search or category pages, to keep headers light.<br>Rejected: a store switcher on every page, which crowded small headers.</p><div class="dec__prio"><i class="mlabel">PRIORITY</i><b class="prio prio--now">Now</b></div></div>
+              <div class="dec__row"><i class="dec__num">DECISION 2</i><p class="dec__insight">Pickup must not look like courier delivery</p><p class="dec__cell"><i class="mlabel">DECISION</i>Two separate cards: Pickup (prepared by the store) and Delivery (third-party courier, time, fee). The Home chip already shows the current method.</p><p class="dec__cell dec__cell--soft"><i class="mlabel">TRADE-OFF</i>The final choice is confirmed at checkout.<br>Rejected: a Pickup / Delivery toggle on Home, because slots and fees depend on the cart.</p><div class="dec__prio"><i class="mlabel">PRIORITY</i><b class="prio prio--now">Now</b></div></div>
+              <div class="dec__row"><i class="dec__num">DECISION 3</i><p class="dec__insight">Mums need to know where a promo works</p><p class="dec__cell"><i class="mlabel">DECISION</i>Each promo is labelled Online or In-store (member scan); online promos get Add to cart with the terms on the card.</p><p class="dec__cell dec__cell--soft"><i class="mlabel">TRADE-OFF</i>In-store promos still can’t be bought in the app.<br>Rejected: hiding in-store promos, because they still bring mums to the store.</p><div class="dec__prio"><i class="mlabel">PRIORITY</i><b class="prio prio--now">Now</b></div></div>
+              <div class="dec__row"><i class="dec__num">DECISION 4</i><p class="dec__insight">Savings should be visible while shopping</p><p class="dec__cell"><i class="mlabel">DECISION</i>Savings per product, and total savings above the total price, from the cart onwards.</p><p class="dec__cell dec__cell--soft"><i class="mlabel">TRADE-OFF</i>One more line in the cart summary.<br>Rejected: savings only at checkout, too late to shape the basket.</p><div class="dec__prio"><i class="mlabel">PRIORITY</i><b class="prio prio--now">Now</b></div></div>
+              <div class="dec__row"><i class="dec__num">DECISION 5</i><p class="dec__insight">Text and categories must be easy to scan</p><p class="dec__cell"><i class="mlabel">DECISION</i>Body text at 16px, key info in semibold, and categories as large photo tiles on Home.</p><p class="dec__cell dec__cell--soft"><i class="mlabel">TRADE-OFF</i>Fewer items fit on one screen.<br>Rejected: denser lists with smaller text, which mums skipped.</p><div class="dec__prio"><i class="mlabel">PRIORITY</i><b class="prio prio--now">Now</b></div></div>
+              <div class="dec__row"><i class="dec__num">DECISION 6</i><p class="dec__insight">Dead ends should become a next step</p><p class="dec__cell"><i class="mlabel">DECISION</i>Empty results and out-of-stock items show similar products and keyword suggestions.</p><p class="dec__cell dec__cell--soft"><i class="mlabel">TRADE-OFF</i>Suggestions need good product data to stay relevant.<br>Rejected: a plain “no results” message with only a back button.</p><div class="dec__prio"><i class="mlabel">PRIORITY</i><b class="prio prio--next">Next</b></div></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 07 DESIGN SOLUTION -->
+        <section class="sec" id="solution">
+          <div class="sec__body">
+            <div><p class="eyebrow">07 / Design solution</p><h2>Three happy flows, before vs after</h2></div>
+            <p class="lead">Each flow answers one opportunity area. Every pair shows the current app next to my revamp, with one line on the problem and one on the fix.</p>
+            <div class="callout">
+              <p class="callout__label">ABOUT THESE SCREENS</p>
+              <p>This is a personal exploration, not an official Super Indo or ASA design. Current-app screens come from the public app. Research is shared at summary level and anonymised; product names, prices and stores in the mockups are illustrative.</p>
+            </div>
+
+            <div class="tabbox" data-tabs>
+              <div class="tabs" role="tablist" aria-label="Flows">
+                <button role="tab" id="t1" aria-controls="p1" aria-selected="true">FLOW 1 · STORE &amp; FULFILMENT</button>
+                <button role="tab" id="t2" aria-controls="p2" aria-selected="false">FLOW 2 · PROMOS</button>
+                <button role="tab" id="t3" aria-controls="p3" aria-selected="false">FLOW 3 · PRODUCT DISCOVERY</button>
+                <button role="tab" id="t4" aria-controls="p4" aria-selected="false">READABILITY · ZOOM-IN</button>
+              </div>
+
+              <div class="tabpanel" role="tabpanel" id="p1" aria-labelledby="t1">
+                <div class="flowhead">
+                  <span class="flowchip">FLOW 1 · STORE &amp; FULFILMENT</span>
+                  <h3>Always know which store, and how the order reaches you</h3>
+                  <p class="main-solution">Main solution: the store is shown on Home, Cart and Checkout, and pickup is separated from courier delivery.</p>
+                  <p>Edge cases designed: switching store with items in the cart, and delivery without a saved address.<br>Success signal (hypothesis): fewer orders dropped at checkout over the pickup or delivery choice.</p>
+                </div>
+                <div class="pairs m-scroll">
+                  <article class="pair"><div class="pair__stage"><img loading="lazy" src="images/msi/pair-1.jpg" width="860" height="940" alt="Current Home screen next to the revamped Home with store chip and category tiles"></div><h4>Home</h4><dl><dt>BEFORE</dt><dd>The store was easy to miss, and categories sat behind a small button.</dd><dt class="after">AFTER</dt><dd>The store and the categories are visible at once, in larger text.</dd></dl></article>
+                  <article class="pair"><div class="pair__stage"><img loading="lazy" src="images/msi/pair-2.jpg" width="860" height="938" alt="Current checkout next to the revamped checkout with separate Pickup and Delivery cards"></div><h4>Checkout</h4><dl><dt>BEFORE</dt><dd>Pickup sat among third-party couriers, so mums expected the supermarket to deliver.</dd><dt class="after">AFTER</dt><dd>Pickup (prepared by the store) and Delivery (courier, time, fee) are two clear cards.</dd></dl></article>
+                </div>
+              </div>
+
+              <div class="tabpanel" role="tabpanel" id="p2" aria-labelledby="t2">
+                <div class="flowhead">
+                  <span class="flowchip">FLOW 2 · PROMOS</span>
+                  <h3>Promos that explain themselves and go straight to the cart</h3>
+                  <p class="main-solution">Main solution: each promo says where it works, online promos go straight to the cart, and savings are shown from the cart.</p>
+                  <p>Edge case designed: a bundle deal (tebus murah) once its limit is reached.<br>Success signal (hypothesis): more promo visits that end in an online order.</p>
+                </div>
+                <div class="pairs m-scroll">
+                  <article class="pair"><div class="pair__stage"><img loading="lazy" src="images/msi/pair-3.jpg" width="860" height="938" alt="Current member promo page next to the revamped promo page with Online and In-store labels"></div><h4>Promo page</h4><dl><dt>BEFORE</dt><dd>Member promos couldn’t be added to cart and only worked in-store via member scan.</dd><dt class="after">AFTER</dt><dd>Each promo says if it works online or in-store, and online promos have Add to cart.</dd></dl></article>
+                  <article class="pair"><div class="pair__stage"><img loading="lazy" src="images/msi/pair-4.jpg" width="860" height="938" alt="Current cart next to the revamped cart showing savings"></div><h4>Cart</h4><dl><dt>BEFORE</dt><dd>No savings or discounts were shown while buying.</dd><dt class="after">AFTER</dt><dd>Savings per product, and total savings above the total price.</dd></dl></article>
+                </div>
+              </div>
+
+              <div class="tabpanel" role="tabpanel" id="p3" aria-labelledby="t3">
+                <div class="flowhead">
+                  <span class="flowchip">FLOW 3 · PRODUCT DISCOVERY</span>
+                  <h3>Search that understands everyday words and never ends in a dead end</h3>
+                  <p class="main-solution">Main solution: suggestions for everyday words, and similar products when an item is out of stock.</p>
+                  <p>Edge cases designed: no results at all, and narrowing results with filters.<br>Success signal (hypothesis): more searches that end with an item in the cart.</p>
+                </div>
+                <div class="pairs m-scroll">
+                  <article class="pair"><div class="pair__stage"><img loading="lazy" src="images/msi/pair-5.jpg" width="860" height="938" alt="Current empty search results next to revamped search suggestions"></div><h4>Search</h4><dl><dt>BEFORE</dt><dd>Everyday words like “fresh chicken” could end in empty results.</dd><dt class="after">AFTER</dt><dd>Suggestions match everyday words to real products and categories.</dd></dl></article>
+                  <article class="pair"><div class="pair__stage"><img loading="lazy" src="images/msi/pair-6.jpg" width="860" height="938" alt="Current out-of-stock results next to revamped results with similar products in stock"></div><h4>Out of stock</h4><dl><dt>BEFORE</dt><dd>Out of stock was found late, near payment, with no alternative.</dd><dt class="after">AFTER</dt><dd>Stock shows in search results, with similar products in stock right below, before anything reaches the cart.</dd></dl></article>
+                </div>
+              </div>
+
+              <div class="tabpanel" role="tabpanel" id="p4" aria-labelledby="t4">
+                <div class="flowhead">
+                  <span class="flowchip">READABILITY · ZOOM-IN</span>
+                  <h3>Key info that mums can read at a glance</h3>
+                  <p class="main-solution">Main solution: body text at 16px, key info in semibold, and pickup vs delivery as large cards. Below is the same checkout step, cropped at the same width.</p>
+                </div>
+                <div class="pairs m-scroll">
+                  <article class="pair"><div class="pair__stage"><img loading="lazy" src="images/msi/zoom-1.jpg" width="860" height="572" alt="Close-up of the current checkout delivery options in small, light text"></div><h4>AS-IS · Checkout, delivery choice</h4><dl><dt>BEFORE</dt><dd>Pickup sat in a list of couriers, in small, light text that was easy to skip.</dd></dl></article>
+                  <article class="pair"><div class="pair__stage"><img loading="lazy" src="images/msi/zoom-2.jpg" width="860" height="572" alt="Close-up of the revamped Pickup and Delivery cards"></div><h4>REVAMP · Checkout, delivery choice</h4><dl><dt class="after">AFTER</dt><dd>Pickup and delivery are large cards with bold titles; who prepares it, the time and the fee stand out.</dd></dl></article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 08 DESIGN SYSTEM -->
+        <section class="sec" id="system">
+          <div class="sec__body">
+            <div><p class="eyebrow">08 / Design system</p><h2>A lean design system: 40 components, built only from what the flows need</h2></div>
+            <div class="photos m-scroll">
+              <figure class="card photo"><img loading="lazy" src="images/msi/ds-1.jpg" width="584" height="488" alt="Colour and typography foundations"><figcaption class="cap"><span>Colour &amp; typography</span><b class="chip-grey">FOUNDATIONS</b></figcaption></figure>
+              <figure class="card photo"><img loading="lazy" src="images/msi/ds-2.jpg" width="584" height="488" alt="Product card component and its variants"><figcaption class="cap"><span>Product card</span><b class="chip-grey">COMPONENT</b></figcaption></figure>
+              <figure class="card photo"><img loading="lazy" src="images/msi/ds-3.jpg" width="584" height="488" alt="Fulfilment option card component and its variants"><figcaption class="cap"><span>Fulfilment option card</span><b class="chip-grey">COMPONENT</b></figcaption></figure>
+            </div>
+            <p class="dsnote">I built new foundations and components from scratch with AI as a tool, sized for mums who prefer larger text: body text at 16px and nothing below 14px, warm pastel category tiles, and clear colours for buttons, chips and promo badges.</p>
+            <p class="mini-label">KEY DECISIONS</p>
+            <div class="grid grid--4 m-scroll">
+              <div class="card card--pad step"><span class="step__n">01</span><h3>Readable first</h3><p>Body text at 16px, nothing below 14px. Primary and secondary text pass 4.5:1 contrast, and main buttons are 44–48px tall.</p><span class="chip-accent">Foundation</span></div>
+              <div class="card card--pad step"><span class="step__n">02</span><h3>Store chip</h3><p>One tappable chip shows and changes the active store.</p><span class="chip-accent">Component</span></div>
+              <div class="card card--pad step"><span class="step__n">03</span><h3>Fulfilment option</h3><p>Pickup and delivery cards that name who prepares it, when, and the cost.</p><span class="chip-accent">Component</span></div>
+              <div class="card card--pad step"><span class="step__n">04</span><h3>Product card actions</h3><p>Add to cart right on the card, including on promo cards.</p><span class="chip-accent">Component</span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 09 AI WORKFLOW -->
+        <section class="sec" id="ai">
+          <div class="sec__body">
+            <div><p class="eyebrow">09 / AI workflow</p><h2>AI as a tool, decisions stay with me</h2></div>
+            <p class="lead">I used Claude with a project vault (brief, research notes, decisions) and Figma tools to draft flows, screens and documentation faster. Every output was checked against the findings and the confidentiality rules before it went into the design. Research synthesis, prioritisation and final design choices were never handed to AI.</p>
+            <p class="mini-label">WORKFLOW</p>
+            <div class="grid grid--4 m-scroll">
+              <div class="card card--pad step"><span class="step__n">01</span><h3>Context</h3><p>Brief, rules and research notes kept in one vault.</p><span class="chip-accent">Me</span></div>
+              <div class="card card--pad step"><span class="step__n">02</span><h3>Draft</h3><p>AI drafts flows, screen lists and Figma layouts.</p><span class="chip-accent">AI</span></div>
+              <div class="card card--pad step"><span class="step__n">03</span><h3>Review</h3><p>I check every draft against findings and rules.</p><span class="chip-accent">Me</span></div>
+              <div class="card card--pad step"><span class="step__n">04</span><h3>Build &amp; QA</h3><p>Screens built in Figma and checked by export.</p><span class="chip-accent">AI + me</span></div>
+            </div>
+            <p class="mini-label">WHERE I STEPPED IN</p>
+            <div class="grid grid--3 m-scroll">
+              <div class="card card--pad"><span class="rq">KEPT</span><p class="rq__text">Draft wireflows and screen lists, after checking each screen against a finding.</p></div>
+              <div class="card card--pad"><span class="rq">CHANGED</span><p class="rq__text">An early draft said member promos needed extra steps to reach the cart. From field knowledge I corrected it: they only apply in-store via member scan, so the fix became an Online / In-store label.</p></div>
+              <div class="card card--pad"><span class="rq">REJECTED</span><p class="rq__text">Raw findings and internal codes in public material; I replaced them with anonymised HMW labels.</p></div>
+            </div>
+            <div class="tools"><img loading="lazy" src="images/msi/ai-tools.png" width="396" height="291" alt="Tools used: Claude, Figma and a terminal"></div>
+          </div>
+        </section>
+
+        <!-- 10 OUTCOME -->
+        <section class="sec" id="outcome">
+          <div class="sec__body">
+            <div><p class="eyebrow">10 / Outcome</p><h2>Results, learnings and next steps</h2></div>
+            <div class="grid grid--3 m-scroll">
+              <div class="card outcome"><h3>What this produced</h3><p>3 opportunity areas, plus readability, mapped on one shopping journey.</p><p>3 happy flows, each compared side by side with the current app.</p><p>A lean design system: 40 components (88 variants), 27 icons and 78 variables, with documented decisions.</p></div>
+              <div class="card outcome"><h3>What I learned</h3><p>Small context cues (store, pickup, savings) build more trust than new features.</p><p>Comparing before and after per screen kept every change tied to a finding.</p><p>AI sped up drafts, but choosing and correcting them was still design work.</p></div>
+              <div class="card outcome"><h3>What comes next</h3><p>Extend the store chip so mums can switch pickup or delivery from Home.</p><p>Close the accessibility gaps I found: tertiary text at 3.4:1 and the 26px quantity stepper.</p><p>Turn the readability rules into a checklist for every new screen.</p></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 11 TAKEAWAY -->
+        <section class="sec" id="takeaway">
+          <blockquote class="quote">
+            <p>Mums trust the app when it feels like their own store: they know where they shop, what they save and what to do next.</p>
+            <footer>MY TAKEAWAY</footer>
+          </blockquote>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <p class="footer__name">TIARA BISRINA</p>
+        <p class="footer__copy">© 2026 TIARA BISRINA. UX &amp; CX RESEARCHER.</p>
+      </div>
+      <div class="footer__cols">
+        <div><p class="footer__h">SOCIAL</p><a href="https://www.linkedin.com/in/tiara-bisrina/" target="_blank" rel="noopener">LinkedIn</a></div>
+        <div><p class="footer__h">CONTACT</p><a href="mailto:tbisfir@gmail.com">Email</a><a href="https://wa.me/6281379163839" target="_blank" rel="noopener">WhatsApp</a></div>
+        <div><p class="footer__h">DOCS</p><a href="https://drive.google.com/file/d/18wMbAyXeTYvcJ-vYEovOR8DaynE98UBs/view?usp=sharing" target="_blank" rel="noopener">Resume</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js" defer></script>
+</body>
+</html>

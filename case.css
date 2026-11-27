@@ -1,0 +1,264 @@
+/* ==========================================================
+   Case study layout v3 · shared by all three case studies
+   Loads after style.css. Adds: sidebar "On this page", eyebrows,
+   mobile jump menu, mobile carousels, tabs, before/after pairs,
+   design system and AI workflow blocks, about page.
+   ========================================================== */
+
+:root { --accent: #ed1c24; --accent-soft: #e27867; }
+
+/* ---------- Page grid: sticky sidebar + content ---------- */
+.cs {
+  display: grid; grid-template-columns: 172px minmax(0, 932px); column-gap: 48px;
+  padding: 0 var(--pad-x); border-top: 1px solid var(--line);
+}
+.toc { position: sticky; top: 24px; align-self: start; padding: 40px 0; }
+.toc__label {
+  font-family: "Space Grotesk", "Inter", sans-serif; font-weight: 700; font-size: 11px;
+  letter-spacing: 0.08em; color: #999; margin-bottom: 12px;
+}
+.toc ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.toc a {
+  font-family: "Space Grotesk", "Inter", sans-serif; font-weight: 700; font-size: 13px; line-height: 20px;
+  color: #525252; text-decoration: none; text-transform: uppercase;
+}
+.toc a:hover { color: #000; }
+.toc a.is-current { color: var(--accent); }
+
+.cs__main { min-width: 0; }
+.cs__main .sec { display: block; padding: 40px 0; border-top: 1px solid var(--line); }
+.cs__main .sec:first-child { border-top: 0; }
+.sec { scroll-margin-top: 16px; }
+
+.eyebrow {
+  font-family: "Space Grotesk", "Inter", sans-serif; font-weight: 700; font-size: 13px; line-height: 20px;
+  color: #525252; text-transform: uppercase; margin-bottom: 10px;
+}
+
+/* mobile jump menu (hidden on desktop) */
+.jump { display: none; }
+
+/* ---------- Hero, layout shared with MSI and Buku KIA ---------- */
+.hero--wide .hero__visual { margin-bottom: 30px; overflow: hidden; }
+.hero--wide .hero__visual img { width: 100%; height: auto; aspect-ratio: 1150 / 346; object-fit: cover; }
+.hero--wide .hero__grid { grid-template-columns: minmax(0, 1fr) 520px; gap: 24px; }
+
+/* ---------- Generic cards ---------- */
+.card h3.card__title { font-size: 18px; font-weight: 700; color: var(--accent); }
+.tag {
+  display: inline-block; align-self: flex-start; font-family: "Space Grotesk", sans-serif; font-weight: 700;
+  font-size: 10px; letter-spacing: 0.08em; padding: 3px 8px; border-radius: 4px; background: #f5f5f5; color: #404040;
+}
+.tag--red { background: var(--tint); color: var(--accent); }
+.prio--in { background: var(--accent); color: #fff; }
+
+/* image card with caption (approach, findings, design system, evidence) */
+.imgcard { margin: 0; overflow: hidden; background: #fff; }
+.imgcard img { width: 100%; height: auto; display: block; }
+.imgcard .cap a { color: inherit; }
+
+/* ---------- Findings: number above title (as in the final design) ---------- */
+.finding__text h3 { flex-direction: column; gap: 6px; }
+
+/* ---------- Flow / tab block ---------- */
+.tabs { display: flex; border-bottom: 1px solid #9f9f9f; background: #fff; overflow-x: auto; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+.tabs button {
+  flex: 1 0 auto; border: 0; border-bottom: 3px solid transparent; margin-bottom: -1px; background: #f6f6f6; cursor: pointer;
+  padding: 13px 16px; font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 14px; color: var(--accent);
+  white-space: nowrap;
+}
+.tabs button[aria-selected="true"] { background: var(--accent); color: #fff; border-bottom-color: var(--accent); }
+.tabs button:focus-visible { outline: 2px solid #000; outline-offset: -4px; }
+.tabbox { background: var(--tint); }
+.tabpanel { padding: 24px; display: flex; flex-direction: column; gap: 20px; border-bottom: 1px solid #989898; }
+.tabpanel[hidden] { display: none; }
+.flowchip {
+  align-self: flex-start; background: #ededed; border-radius: 4px; padding: 3px 8px;
+  font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.04em; color: #000;
+}
+.flowhead { display: flex; flex-direction: column; gap: 8px; }
+.flowhead h3 { font-size: 20px; line-height: 28px; font-weight: 600; color: var(--ink); }
+.flowhead p { font-size: 15px; line-height: 22px; font-weight: 500; color: #262626; }
+.flowhead p.main-solution { color: var(--accent); }
+
+.pairs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.pair { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.pair__stage { background: #fff; border-radius: 8px; overflow: hidden; }
+.pair__stage img { width: 100%; height: auto; display: block; }
+.pair h4 { font-size: 17px; line-height: 23px; font-weight: 700; color: var(--ink); }
+.pair dl { display: flex; flex-direction: column; gap: 4px; }
+.pair dt { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.08em; color: #a3a3a3; margin-top: 8px; }
+.pair dt:first-child { margin-top: 0; }
+.pair dt.after, .pair dt.linked { color: var(--accent); }
+.pair dd { font-size: 13px; line-height: 19px; color: #404040; }
+
+/* before / after on a plain background (Buku KIA) */
+.pairs--plain .pair__stage { background: #f6f6f6; }
+
+/* ---------- Design system / AI workflow ---------- */
+.dsnote { font-size: 18px; line-height: 27px; color: var(--ink); max-width: 840px; }
+.tools { display: flex; align-items: center; gap: 16px; }
+.tools img { height: 64px; width: auto; }
+
+/* ---------- Outcome summary + evidence ---------- */
+.evidence { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.evidence .cap span { white-space: normal; }
+.evidence .cap a { text-decoration: underline; }
+
+/* ---------- About page ---------- */
+.about-hero { display: grid; grid-template-columns: minmax(0, 760px) 368px; gap: 24px; padding: 72px var(--pad-x) 64px; align-items: start; }
+.about-hero h1 { font-size: 64px; line-height: 1.1; font-weight: 700; letter-spacing: -0.02em; color: #000; margin-bottom: 32px; }
+.about-hero p { font-size: 20px; line-height: 1.55; color: #262626; max-width: 700px; }
+.about-hero p + p { margin-top: 20px; }
+.about-photo { border: 1px solid var(--line); padding: 5px; background: #fff; }
+.about-photo img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.about-sec { padding: 56px var(--pad-x); border-top: 1px solid var(--line); }
+.about-sec h2.k { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: #5e5e5e; text-transform: uppercase; margin-bottom: 32px; line-height: 15px; }
+.role { display: grid; grid-template-columns: 200px 380px minmax(0, 476px); gap: 48px; padding: 24px 0; border-top: 1px solid var(--line); }
+.role:first-of-type { border-top: 0; padding-top: 0; }
+.role__when { font-size: 14px; font-weight: 600; color: #5e5e5e; }
+.role h3 { font-size: 24px; font-weight: 600; color: #000; }
+.role__org { font-size: 14px; color: #5e5e5e; margin-top: 4px; }
+.role__desc { font-size: 16px; line-height: 24px; color: #404040; }
+.big-quote { font-size: 36px; line-height: 1.2; font-weight: 600; color: #000; max-width: 800px; margin-bottom: 40px; letter-spacing: -0.01em; }
+.principles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px; }
+.principle img { width: 100%; aspect-ratio: 352 / 262; object-fit: cover; margin-bottom: 20px; }
+.principle__n { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 12px; color: #a3a3a3; }
+.principle h3 { font-size: 24px; font-weight: 600; color: #000; margin: 6px 0 10px; }
+.principle p { font-size: 16px; line-height: 24px; color: #404040; }
+.principle small { display: block; margin-top: 14px; font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.08em; color: var(--accent); }
+.skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.skills h3 { font-size: 24px; font-weight: 600; color: #000; padding-bottom: 14px; border-bottom: 1px solid var(--line); margin-bottom: 14px; }
+.skills ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.skills li { font-size: 16px; color: #404040; padding-left: 20px; position: relative; }
+.skills li::before { content: ""; position: absolute; left: 0; top: 9px; width: 8px; height: 8px; background: #000; }
+.looking { font-size: 36px; line-height: 1.2; font-weight: 600; color: #000; max-width: 900px; letter-spacing: -0.01em; }
+.about-cta { padding: 80px var(--pad-x); border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 32px; text-align: center; }
+.about-cta h2 { font-size: 30px; font-weight: 600; color: #000; }
+.about-cta .h-actions { margin-top: 0; justify-content: center; }
+
+/* ==========================================================
+   Tablet
+   ========================================================== */
+@media (max-width: 1023px) {
+  .cs { grid-template-columns: 140px minmax(0, 1fr); column-gap: 32px; }
+  .hero--wide .hero__grid { grid-template-columns: 1fr; }
+  .about-hero { grid-template-columns: 1fr 280px; }
+  .role { grid-template-columns: 160px 1fr; }
+  .role__desc { grid-column: 2; }
+  .principles { gap: 24px; }
+}
+
+/* ==========================================================
+   Mobile (390 px design)
+   ========================================================== */
+@media (max-width: 767px) {
+  .cs { display: block; padding: 0 20px; border-top: 0; }
+  .toc { display: none; }
+  .cs__main .sec { padding: 32px 0; }
+  .cs__main .sec:first-child { border-top: 1px solid var(--line); }
+
+  /* sticky jump menu under the nav */
+  .jump {
+    display: block; position: sticky; top: 0; z-index: 20; background: #fff; border-bottom: 1px solid #e6e6e6;
+  }
+  .jump summary {
+    list-style: none; display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; cursor: pointer;
+    font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.08em; color: #999;
+  }
+  .jump summary::-webkit-details-marker { display: none; }
+  .jump__current { font-size: 13px; color: var(--accent); letter-spacing: 0; text-transform: uppercase; }
+  .jump__current::after { content: " ▾"; font-size: 10px; }
+  .jump[open] .jump__current::after { content: " ▴"; }
+  .jump ol { list-style: none; margin: 0; padding: 4px 20px 16px; display: flex; flex-direction: column; gap: 12px; }
+  .jump ol a { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 13px; color: #525252; text-decoration: none; text-transform: uppercase; }
+
+  .eyebrow { margin-bottom: 8px; }
+  h2 { font-size: 22px; line-height: 32px; }
+  .lead, .dsnote { font-size: 15px; line-height: 23px; }
+  .hero h1 { font-size: 28px; line-height: 1.15; }
+  .hero__sub { font-size: 16px; }
+  .hero--wide .hero__visual { margin-bottom: 24px; }
+  .hero--wide .hero__visual img { aspect-ratio: 350 / 240; }
+
+  /* carousels: one card plus a peek of the next */
+  .m-scroll {
+    display: flex !important; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
+    margin-right: -20px; padding-right: 20px; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    grid-template-columns: none;
+  }
+  .m-scroll::-webkit-scrollbar { display: none; }
+  .m-scroll > * { flex: 0 0 var(--card-w, 260px); scroll-snap-align: start; min-width: 0; }
+  .m-scroll.photos > * { --card-w: 229px; }
+
+  /* synthesis: each row becomes one card in the carousel */
+  .matrix.m-scroll { align-items: stretch; }
+  .matrix.m-scroll .matrix__row { display: flex; flex-direction: column; gap: 8px; }
+
+  /* findings: image on top, number above title */
+  .findings.m-scroll { align-items: flex-start; }
+  .findings.m-scroll .finding { --card-w: 290px; }
+  .finding__text h3 { font-size: 17px; line-height: 25px; }
+  .finding__text p { font-size: 15px; line-height: 23px; }
+  .finding__text .implication { font-size: 14px; line-height: 21px; }
+
+  /* decisions: one card per decision */
+  .dec.m-scroll { align-items: stretch; }
+  .dec.m-scroll .dec__row { display: flex; flex-direction: column; gap: 6px; }
+  .dec__num { display: block !important; font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.08em; color: #a3a3a3; }
+
+  .tabpanel { padding: 16px; }
+  .tabs button { font-size: 12px; padding: 11px 12px; flex: 0 0 auto; }
+  .pairs { grid-template-columns: 1fr; gap: 32px; }
+  .pairs.m-scroll { gap: 16px; }
+  .pairs.m-scroll .pair { --card-w: 290px; }
+  .flowhead h3 { font-size: 17px; line-height: 24px; }
+  .flowhead p { font-size: 14px; line-height: 21px; }
+
+  .grid--screens.m-scroll .screen { --card-w: 280px; }
+
+  .evidence { display: flex; }
+  .outcome { --card-w: 270px; }
+
+  .about-hero { grid-template-columns: 1fr; padding: 32px 20px; }
+  .about-hero h1 { font-size: 40px; margin-bottom: 20px; }
+  .about-hero p { font-size: 17px; }
+  .about-sec { padding: 40px 20px; }
+  .role { grid-template-columns: 1fr; gap: 6px; }
+  .role__desc { grid-column: auto; margin-top: 6px; }
+  .big-quote, .looking { font-size: 26px; }
+  .principles, .skills { gap: 16px; }
+  .principles.m-scroll .principle { --card-w: 280px; }
+  .skills.m-scroll > * { --card-w: 240px; }
+  .about-cta { padding: 48px 20px; }
+  .about-cta h2 { font-size: 24px; }
+}
+
+/* the decision number label only shows on mobile */
+.dec__num { display: none; }
+
+.findings { display: flex; flex-direction: column; gap: 24px; }
+
+/* recommendations table with a wider status column (Buku KIA) */
+.dec__head--wide, .dec--wide .dec__row { grid-template-columns: minmax(120px, 210px) minmax(0, 280px) minmax(0, 250px) 104px; }
+
+@media (max-width: 767px) {
+  .findings.m-scroll { flex-direction: row; }
+  .dec__head--wide { display: none; }
+}
+
+/* Buku KIA findings use wider photos (381px in the design) */
+.findings--wide .finding { grid-template-columns: 381px minmax(0, 1fr); }
+@media (max-width: 1023px) { .findings--wide .finding { grid-template-columns: 260px minmax(0, 1fr); } }
+@media (max-width: 767px) { .findings--wide .finding { grid-template-columns: 1fr; } }
+
+/* About principles: plain grey "Seen in" line, no red */
+.principle small { color: #737373; }
+.principle small a { color: inherit; }
+
+/* MSI hero on mobile: shift the crop past the wordmark so no letter is cut in half */
+@media (max-width: 767px) { .hero--wide .hero__visual img.hero-msi { object-position: 62% center; } }
+
+/* EIGER hero on mobile: keep both the trophy and the reseller receiving it in frame */
+@media (max-width: 767px) { .hero--wide .hero__visual img.hero-eiger { object-position: 65% center; } }

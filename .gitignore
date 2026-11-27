@@ -1,0 +1,12 @@
+# private working files — never deploy
+_archive/
+notes/
+.DS_Store
+.claude/
+*.zip
+
+# old unused assets, not part of the site
+assets/
+images/d-screen-*.png
+images/m-screen-*.png
+images/hero-full.jpg
