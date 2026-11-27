@@ -265,3 +265,5 @@
 
 /* decisions must swipe sideways on mobile (base .dec stacks in a column) */
 @media (max-width: 767px) { .dec.m-scroll { flex-direction: row; gap: 16px; } .dec.m-scroll .dec__row { --card-w: 260px; } }
+.more-link { margin: 0; font-size: 14px; font-weight: 600; }
+.more-link a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
